@@ -1,16 +1,75 @@
-# Journal - {{DATE}} - {{TOPIC OR DAY N}}
+# Journal – Almost Half of My September
 
-## What I learned
-- 
-- 
+## So Far, What I’ve Learned
 
-## What confused me
-- 
+- `Chinook → Star Schema → OULAD`
+- Started with understanding a simple relational dataset, then moved toward **dimensional modeling** and eventually worked with a more complex educational dataset.
+- One of the challenges I’ve encountered is learning how to **push back smartly** when requirements are unclear or difficult, while still knowing when to innovate wisely.
+- I’m slowly becoming more comfortable with the **data engineering workflow**, from understanding datasets and schemas to using Git for version control.
 
-## One small next step
-- [ ] 
+## What I Learned
 
-## Git checkpoint
-- [ ] I created or updated a file
-- [ ] I wrote a commit
-- [ ] I pushed my changes
+- A **repository** is basically a project folder that Git tracks, including its history of changes.
+- A **commit** is like a saved checkpoint. It records a specific change and usually includes a short message describing what was changed.
+- **Markdown** allows me to document my work using simple syntax instead of complicated formatting tools.
+- A **Star Schema** organizes data into fact and dimension tables, making it easier to analyze data.
+- Moving from **Chinook → Star Schema → OULAD** helped me see how raw or relational data can be structured for analytical purposes.
+
+## Terms I’m Still Learning
+
+- **Repository** – a project folder managed and tracked by Git.
+- **Commit** – a saved snapshot of changes in a Git repository.
+- **Data Lake** – a storage environment where raw data can be stored before it is cleaned, processed, or analyzed.
+- **Fact Table** – a table that contains measurable events or transactions.
+- **Dimension Table** – a table that provides descriptive information used to analyze the data.
+
+![Data Lake?](https://chatgpt.com/assets/what.jpg)
+
+## What Confused Me
+
+- I still sometimes mix up **Git** and **GitHub**.
+- I’m not yet fully sure **when I should commit** my changes and how frequently I should do it.
+- I’m still learning the difference between:
+  - changes on my **local machine**
+  - changes that have been **committed**
+  - changes that have been **pushed to GitHub**
+- Sometimes the workflow feels like a lot of commands to remember in the correct order.
+
+## One Small Next Step
+
+- [ ] Create one more practice commit after class.
+- [ ] Practice the basic Git workflow.
+- [ ] Review the difference between `git add`, `git commit`, and `git push`.
+
+## Git Checkpoint
+
+- [x] I created or updated a file.
+- [x] I created a commit.
+- [x] I pushed my changes to GitHub.
+
+## Evidence from Today
+
+- Bootcamp notes on SQL basics.
+- [Data Engineering PH](https://dataengineering.ph/)
+
+![Data Engineering](https://chatgpt.com/assets/meme.png)
+
+## Reflection
+
+### What felt easy today?
+
+Writing bullet points instead of long paragraphs. Markdown also feels surprisingly simple once I got used to the syntax.
+
+### What felt difficult today?
+
+Remembering the Git commands and understanding the correct order of the workflow.
+
+### What do I want to understand better next time?
+
+I want to understand the difference between my **local changes**, my **commits**, and what eventually appears on **GitHub**. I also want to become more comfortable with the Git workflow instead of relying on memorization alone.
+
+## Mood or Meme
+
+> “I am *lost*, but I am less lost than yesterday.”
+
+And honestly, I’ll take that as progress. 😅
