@@ -1,73 +1,133 @@
 # Journal – Almost Half of My September
 
-## So Far, What I’ve Learned
+## 🧭 So Far, What I’ve Encountered
 
-- `Chinook → Star Schema → OULAD`
-- Started with understanding a simple relational dataset, then moved toward **dimensional modeling** and eventually worked with a more complex educational dataset.
-- One of the challenges I’ve encountered is learning how to **push back smartly** when requirements are unclear or difficult, while still knowing when to innovate wisely.
-- I’m slowly becoming more comfortable with the **data engineering workflow**, from understanding datasets and schemas to using Git for version control.
+### Chinook Schema → Star Schema → Instacart → OULAD
 
-## What I Learned
+My learning journey so far has moved from understanding an existing relational schema to thinking about how data can be **structured, connected, validated, and transformed into something useful for business questions**.
 
-- A **repository** is basically a project folder that Git tracks, including its history of changes.
-- A **commit** is like a saved checkpoint. It records a specific change and usually includes a short message describing what was changed.
-- **Markdown** allows me to document my work using simple syntax instead of complicated formatting tools.
-- A **Star Schema** organizes data into fact and dimension tables, making it easier to analyze data.
-- Moving from **Chinook → Star Schema → OULAD** helped me see how raw or relational data can be structured for analytical purposes.
+What initially looks like "just data" becomes much more complicated once I start asking:
 
-## Terms I’m Still Learning
+- What information do I actually have?
+- What information am I missing?
+- How are these datasets related?
+- How should the data be structured?
+- What needs to be checked at each layer?
+- How can the data eventually answer a business question?
 
-- **Repository** – a project folder managed and tracked by Git.
-- **Commit** – a saved snapshot of changes in a Git repository.
-- **Data Lake** – a storage environment where raw data can be stored before it is cleaned, processed, or analyzed.
-- **Fact Table** – a table that contains measurable events or transactions.
-- **Dimension Table** – a table that provides descriptive information used to analyze the data.
+---
 
-![Data Lake?](https://chatgpt.com/assets/what.jpg)
+## 💡 What I Learned
 
-## What Confused Me
+- **Excel and Google Sheets may not contain all the information.** There can be much more data behind what we initially see.
+- I need to understand the **relationships between the data**, rather than looking at each dataset independently.
+- Moving through **Chinook → Star Schema → Instacart → OULAD** helped me see different ways of thinking about data and how it can be structured for analysis.
+- **Use the simplest tool that reliably solves the problem.**
+- **Know your tools.**
+- **Know your trade-offs.**
+- SQL is not always the answer. When dealing with **unstructured or semi-structured data**, I need to consider other tools and approaches.
+- Data engineering is not only about making the pipeline work. It is also about making sure the data can support a **business question and create business value**.
 
-- I still sometimes mix up **Git** and **GitHub**.
-- I’m not yet fully sure **when I should commit** my changes and how frequently I should do it.
-- I’m still learning the difference between:
-  - changes on my **local machine**
-  - changes that have been **committed**
-  - changes that have been **pushed to GitHub**
-- Sometimes the workflow feels like a lot of commands to remember in the correct order.
+---
 
-## One Small Next Step
+## 📚 Terms I’m Still Learning
 
-- [ ] Create one more practice commit after class.
-- [ ] Practice the basic Git workflow.
-- [ ] Review the difference between `git add`, `git commit`, and `git push`.
+- **Schema** – the structure or blueprint of a database, including its tables, fields, relationships, and data types.
+- **Data Dictionary** – documentation that describes the meaning, format, and characteristics of data fields.
+- **Data Catalog** – an organized inventory of available data assets, including what the data contains, where it comes from, and how it can be used.
+- **Fact Table** – a table containing measurable events, transactions, or business processes.
+- **Dimension Table** – a table containing descriptive information used to analyze data.
 
-## Git Checkpoint
+---
+
+## ❓ What Confused Me
+
+There are still a lot of things I am trying to understand:
+
+- Why do errors happen when I **commit and push**?
+- How do I move from **data → business questions → business value**?
+- How does **Visual Studio** fit into my workflow?
+- What should I check at **each layer** of the data pipeline?
+- How can I perform these checks efficiently instead of checking everything manually?
+- How do I validate whether the data follows the expected **business rules**?
+- Most importantly, **how do I know that the data is actually correct and useful for the business?**
+
+### Business Value & Business Rule Validation
+
+This is something I want to understand better.
+
+It is not enough for a data pipeline to run successfully. I also need to ask:
+
+> **Does the data make sense according to the business rules, and can it actually answer the business question?**
+
+A pipeline can run without errors and still produce the wrong answer.
+
+---
+
+## 🎯 One Small Next Step
+
+- [ ] Finish **Introduction to Git** in DataCamp.
+- [ ] Find more ways to practice creating and understanding schemas.
+- [ ] Focus on **small steps instead of trying to be perfect immediately**.
+- [ ] Rewatch the recordings of the meeting with SI to catch up on where our group is and what has already been discussed.
+- [ ] Practice documenting what I learn in a clearer and more concise way.
+
+---
+
+## 🔧 Git Checkpoint
 
 - [x] I created or updated a file.
 - [x] I created a commit.
 - [x] I pushed my changes to GitHub.
 
-## Evidence from Today
+---
 
-- Bootcamp notes on SQL basics.
-- [Data Engineering PH](https://dataengineering.ph/)
+## 📈 Evidence of Our Progress
 
-![Data Engineering](https://chatgpt.com/assets/meme.png)
+- Me, just showing up.
+- Continuing to learn despite work travel and unstable internet.
+- Trying to understand new datasets, tools, and group dynamics.
+- Asking questions when things don't make sense.
+- Taking small steps even when I don't fully understand the bigger picture yet.
 
-## Reflection
+---
 
-### What felt easy today?
+## 🪞 Reflection
 
-Writing bullet points instead of long paragraphs. Markdown also feels surprisingly simple once I got used to the syntax.
+### What Felt Easy?
 
-### What felt difficult today?
+Writing bullet points instead of long paragraphs. Markdown also feels surprisingly simple now that I am getting used to the syntax.
 
-Remembering the Git commands and understanding the correct order of the workflow.
+### What Felt Difficult?
 
-### What do I want to understand better next time?
+**Time constraints.** Balancing the bootcamp with work travel and dealing with a weak internet connection made it harder to keep up.
 
-I want to understand the difference between my **local changes**, my **commits**, and what eventually appears on **GitHub**. I also want to become more comfortable with the Git workflow instead of relying on memorization alone.
+**New groupings and new dynamics.** Working with a new group means adjusting to different ways of communicating, thinking, and working.
 
+**The amount of data.** There is a lot to look at, and understanding the relationships between everything can be overwhelming.
+
+Sometimes I feel like one small change can make everything explode—or make the whole thing stop running. 😅
+
+### What Do I Want to Be Better At Next Time?
+
+I want to learn how to:
+
+- **Push back SMARTLY and innovate wisely.**
+- Ask better questions before immediately trying to solve a problem.
+- Understand the **business purpose behind the data**.
+- Become more systematic when checking data at different layers.
+- Improve my **documentation skills**.
+
+Documentation is probably one of the things I struggle with the most. I find it difficult to turn many thoughts into something **concise, refined, and organized with a clear outline**.
+
+I want to get better at turning:
+
+```text
+messy thoughts
+      ↓
+clear structure
+      ↓
+concise documentation
 ## Mood or Meme
 
 > “I am *lost*, but I am less lost than yesterday.”
