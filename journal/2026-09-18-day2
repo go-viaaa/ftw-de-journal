@@ -1,16 +1,44 @@
-# Journal - {{DATE}} - {{TOPIC OR DAY N}}
+# Journal - {{18 September 2026}} - {{me in my lost day}}
 
 ## What I learned
-- 
-- 
+Data can arrive in different ways, such as batch and streaming, depending on how close to real-time the data needs to be. More real-time data usually requires more resources, so there are trade-offs and costs involved.
+
+Incremental loading has three fundamental patterns: append, overwrite, and merge/upsert. The appropriate pattern depends on how the source data changes.
+
+I learned about Slowly Changing Dimensions (SCD). Type 1 overwrites old values, while Type 2 keeps historical records and indicates which record is current.
+
+CDC (Change Data Capture) finds the changes, while SCD stores the changes for historical tracking.
+
+Idempotency means that running the same pipeline multiple times with the same source data should produce the same result.
+
+Understanding the grain of both the production/source data and destination tables is important when designing data pipelines.
+
+Data can be ingested through different patterns, including database ingestion, API ingestion, and web scraping.
+
+For APIs, I need to understand concepts such as endpoints, JSON, authentication, pagination, rate limits, request limits, errors, and timeouts.
+
+Dates can be complicated because of different formats, GMT/time zones, and daylight saving time.
+
+Web scraping involves understanding HTML structure, tags, opening/closing tags, and parsing. Just because data is technically accessible does not necessarily mean it is permitted to scrape or use.
+
+Provenance and governance are important for traceability and understanding where data came from.
+
+A modular pipeline can help organize and maintain data processing more effectively.
+
+I should learn to use Python locally because it will be useful for working with APIs, parsing data, and building pipelines.
 
 ## What confused me
-- 
+I am still unsure about when to choose append, overwrite, or merge/upsert, especially when the source data changes frequently.
+
+I need to understand Slowly Changing Dimensions Types 3–6 and when they should be used.
+
+I want to better understand the relationship between CDC and SCD and how they work together in an actual pipeline.
+
+I am still learning how to determine the correct grain for production and destination tables.
+
+API pagination, rate limits, request limits, and recovery after errors are areas I need to practice more.
+
+I want to understand more about schema design, indexing, and how they affect destination tables.
 
 ## One small next step
-- [ ] 
-
-## Git checkpoint
-- [ ] I created or updated a file
-- [ ] I wrote a commit
-- [ ] I pushed my changes
+ Practice building a small Python pipeline that retrieves data from an API, handles pagination, and loads the results into a table using an appropriate incremental-load pattern.
