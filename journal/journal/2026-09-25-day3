@@ -1,0 +1,270 @@
+# Journal – Pipeline Operations
+
+## 🧭 So Far, What I’ve Encountered
+
+### Development → Production → Operations
+
+My learning has started moving beyond simply writing code and querying data. I am now trying to understand **how data pipelines are developed, deployed, monitored, and maintained in production**.
+
+The flow I am beginning to understand looks something like:
+
+```text
+Development
+     ↓
+Sandbox / Experiment
+     ↓
+Testing
+     ↓
+Review
+     ↓
+Controlled Deployment
+     ↓
+Production
+     ↓
+Monitoring
+     ↓
+Recovery
+```
+
+And within the pipeline itself:
+
+```text
+COPY INTO
+   ↓
+DELTA
+   ↓
+FUNCTIONS
+   ↓
+SCHEDULING
+   ↓
+CI/CD
+   ↓
+JOB → TASK → DAG
+   ↓
+MONITORING
+   ↓
+RECOVERY
+   ↓
+LINEAGE
+   ↓
+PERMISSIONS
+```
+
+The question is no longer just:
+
+> **"Can I make the pipeline work?"**
+
+It is becoming:
+
+> **"Can I make the pipeline work reliably, safely, predictably, and repeatedly?"**
+
+---
+
+## 💡 What I Learned
+
+* **Development and Production are different environments.** Experimenting in a sandbox is different from making changes that affect production data.
+* **Controlled changes matter.** Changes should follow an established process instead of being made directly in production.
+* **CI/CD is a process, not just a tool.** GitHub Actions can support CI/CD, but CI/CD itself is the practice of continuously improving, testing, reviewing, and safely delivering changes.
+* **Test aggressively before production.** A successful code execution does not automatically mean the pipeline is ready for production.
+* **Engineering looks beyond the code.** It also looks at the **system, process, people, permissions, and recovery plan**.
+* **A pipeline needs predictable operations.** Scheduling, retries, reruns, backfills, monitoring, and recovery should be considered before something goes wrong.
+* **Reusable code matters.** Functions and parameters can make pipelines easier to maintain and reuse.
+* **Monitoring is part of the pipeline.** I need to pay attention to:
+
+  * Status
+  * Duration
+  * Failures
+  * Retries
+  * Freshness
+* **Freshness matters.** A pipeline can run successfully but still provide stale data.
+* **Lineage helps explain where data came from.** It provides a step-by-step view of how data moves and changes.
+* **Permissions need to be controlled.** The **Principle of Least Privilege** means giving users or systems only the access they actually need.
+* **You are automating an error if there is no established process.** Automation does not automatically make a bad process better.
+
+---
+
+## 📚 Terms I’m Still Learning
+
+| Term                | What I Understand So Far                                                                  |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| **COPY INTO**       | Loads data into a target table from files or external locations.                          |
+| **Delta**           | A table/storage format used for reliable data processing and management.                  |
+| **Function**        | Reusable logic that can be called when needed.                                            |
+| **Cron**            | A syntax commonly used to define recurring schedules.                                     |
+| **Webhook**         | A mechanism for triggering or notifying another system when an event occurs.              |
+| **VACUUM**          | Removes old files that are no longer needed by a Delta table, subject to retention rules. |
+| **CI/CD**           | Practices for testing, reviewing, integrating, and safely delivering changes.             |
+| **Job**             | A scheduled or triggered unit of pipeline execution.                                      |
+| **Task**            | An individual operation within a job or workflow.                                         |
+| **DAG**             | Directed Acyclic Graph; represents tasks and their dependencies.                          |
+| **Retry**           | Automatically attempts a failed operation again.                                          |
+| **Rerun**           | Runs an execution again, usually after a failure or issue.                                |
+| **Backfill**        | Processes historical data that was missed or needs to be recomputed.                      |
+| **Freshness**       | Indicates how recent the available data is.                                               |
+| **Lineage**         | Tracks the origin and movement of data through different processes.                       |
+| **Least Privilege** | Gives only the minimum permissions required to perform a task.                            |
+
+---
+
+## 🚨 Incident vs. Problem vs. Workaround
+
+One distinction I found important is that these are not necessarily the same thing:
+
+| Concept        | Meaning                                                             |
+| -------------- | ------------------------------------------------------------------- |
+| **Incident**   | A point-in-time event that disrupts normal operation.               |
+| **Problem**    | The underlying or systemic issue that may cause repeated incidents. |
+| **Workaround** | A temporary solution or detour used to restore operation.           |
+
+Understanding the difference helps avoid treating the **symptom** as if it were the **root cause**.
+
+---
+
+## 🔍 Pipeline Monitoring & Recovery
+
+When something goes wrong, the response should be systematic:
+
+```text
+DETECT
+   ↓
+DIAGNOSE
+   ↓
+IMPACT
+   ↓
+RECOVER
+   ↓
+VERIFY
+```
+
+The goal is not simply to make the pipeline run again.
+
+The goal is to:
+
+1. Understand what failed.
+2. Determine what was affected.
+3. Recover safely.
+4. Verify that the data is correct.
+5. Understand how to prevent the same issue from happening again.
+
+**Always protect the data during recovery.**
+
+---
+
+## 🧩 What Confused Me
+
+I am still trying to understand how all these pieces connect:
+
+* When should a pipeline be retried versus rerun?
+* When is a backfill necessary?
+* How do I determine whether an issue is an incident or a deeper problem?
+* How do I monitor data freshness effectively?
+* How does lineage work across multiple pipeline layers?
+* How should permissions be designed?
+* What should be automated, and what should remain controlled?
+* How do I know when a change is safe to move from development to production?
+
+The bigger realization is that **making a pipeline work is only one part of the job**.
+
+---
+
+## 🎯 One Small Next Step
+
+* [ ] Practice building a simple job with multiple tasks.
+* [ ] Understand task dependencies and DAGs.
+* [ ] Practice scheduling and parameters.
+* [ ] Learn how retry, rerun, and backfill differ in actual scenarios.
+* [ ] Practice identifying incidents, problems, and workarounds.
+* [ ] Explore pipeline monitoring and data freshness.
+* [ ] Learn how lineage and permissions fit into production workflows.
+
+---
+
+## 🔧 Git Checkpoint
+
+* [x] Documented what I learned.
+* [x] Organized technical concepts into one workflow.
+* [ ] Practice applying these concepts in an actual pipeline.
+* [ ] Push updated journal to GitHub.
+
+---
+
+## 📈 Evidence of My Progress
+
+* I am starting to think beyond individual SQL statements and code.
+* I am beginning to see pipelines as **systems that need to be operated and maintained**.
+* I am learning that production requires more than simply making something work.
+* I am becoming more aware of **monitoring, recovery, permissions, lineage, and data quality**.
+* I am slowly moving from asking:
+
+> **"Does it work?"**
+
+to asking:
+
+> **"Does it work reliably, safely, and predictably?"**
+
+---
+
+## 🪞 Reflection
+
+### What Felt Easy?
+
+Understanding the individual tools and concepts once they were explained separately.
+
+### What Felt Difficult?
+
+Understanding how everything connects.
+
+At first, **CI/CD, jobs, tasks, DAGs, monitoring, retries, lineage, permissions, and recovery** felt like completely separate topics.
+
+Now I am beginning to see that they are all connected to one bigger idea:
+
+> **How do we operate a data pipeline reliably in the real world?**
+
+### What Do I Want to Be Better At Next Time?
+
+I want to become better at thinking about the **whole system**, not just the code.
+
+I want to learn how to:
+
+* Build with production in mind.
+* Test before deploying.
+* Communicate changes clearly.
+* Monitor what is happening.
+* Recover safely when something fails.
+* Understand the impact of a failure.
+* Protect data and access.
+* Document processes clearly.
+
+```text
+Code
+  ↓
+Pipeline
+  ↓
+Process
+  ↓
+System
+  ↓
+Reliable Data
+```
+
+---
+
+> **"I thought I was learning how to build pipelines. Apparently, I am also learning how to babysit them."** 😅
+
+And maybe that is what **pipeline operations** really means:
+
+```text
+BUILD IT
+   ↓
+TEST IT
+   ↓
+DEPLOY IT
+   ↓
+MONITOR IT
+   ↓
+FIX IT
+   ↓
+UNDERSTAND WHY IT BROKE
+   ↓
+MAKE IT BETTER
+```
